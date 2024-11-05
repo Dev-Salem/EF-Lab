@@ -13,7 +13,7 @@ public class PostConfiguration : IEntityTypeConfiguration<Post> {
             .OnDelete(DeleteBehavior.Cascade);
         builder.HasOne(x => x.UserNavigation).WithMany(x => x.Posts)
             .HasForeignKey(x => x.UserId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.Cascade);
         builder.Property(x => x.Content).HasMaxLength(500).IsRequired();
     }
 }

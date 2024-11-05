@@ -11,7 +11,7 @@ public partial class Post :BaseEntity {
 
     [Column("content")] public string Content { get; set; } = "Content..";
         
-    public int UserId { get; set; }
+    public int? UserId { get; set; }
 
     public virtual User UserNavigation { get; set; } = null!;
 

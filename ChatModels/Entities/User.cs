@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ChatModels.Entities;
 [EntityTypeConfiguration(typeof(UserConfiguration))]
 [Table("User")]
-public partial class User : BaseEntity {
+public partial class User : BaseEntity, ICloneable {
 
     public string Name { get; set; } = "Name";
     public  List<Post> Posts { get; set; } = [];
@@ -14,5 +14,9 @@ public partial class User : BaseEntity {
     public List<Comment> Comments { get; set; } = [];
     public override string ToString() {
         return $"(Name: {Name}, Id: {Id}, Comments: {Comments.Count}, Posts: {Posts.Count}), ";
+    }
+
+    public object Clone() {
+       return this.MemberwiseClone();
     }
 }

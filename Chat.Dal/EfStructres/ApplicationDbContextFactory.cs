@@ -18,7 +18,8 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
             Host = "localhost",
             Username = "devsalem",
             Password = "1234",
-            Database = "cSharp"
+            Database = "cSharp",
+            IncludeErrorDetail = true,
         };
     var connection = connectionBuilder.ConnectionString;
     return connection;

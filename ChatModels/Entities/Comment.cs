@@ -8,7 +8,7 @@ namespace ChatModels.Entities;
 [Table("Comment")]
 public class Comment : BaseEntity {
     public string Content { get; set; } = "Content..";
-    public int UserId { get; set; }
+    public int? UserId { get; set; }
     public User? UserNavigation { get; set; }
     public int PostId { get; set; }
     public Post? PostNavigation { get; set; }
